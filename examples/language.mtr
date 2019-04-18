@@ -1,0 +1,90 @@
+multiline turing
+{
+	alpha = { 'a', 'b', 'c' };
+	
+	begin state 1
+	{
+		(alpha; empty):
+			value = (..., '*');
+			move right, right;
+			goto 2;
+		(empty; empty):
+			move left, left;
+			goto 5;
+	}
+	
+	template q_counter (state next)
+	{
+		(alpha; empty):
+			move right, not;
+			goto next;
+		(empty; empty):
+			value = ('-', ...);
+			goto end;
+	}
+	
+	state 2 : q_counter (3) {}
+	state 3 : q_counter (4) {}
+	state 4 : q_counter (1) {}
+	
+	state 5
+	{
+		(alpha; '*'):
+			value = (..., first);
+			move left, left;
+		(alpha; empty):
+			move not, right;
+			goto 6;
+		(empty; empty):
+			value = ('+', ...);
+			goto end;
+	}
+	
+	state 6
+	{
+		(alpha; alpha):
+			if first == second:
+				move left, right;
+			else:
+				value = ('-', ...);
+				goto end;
+		(alpha; empty):
+			move not, left;
+			goto 7;
+	}
+	
+	state 7
+	{
+		(alpha; alpha):
+			if first == second:
+				move left, left;
+			else:
+				value = ('-', ...);
+				goto end;
+		(alpha; empty):
+			move not, right;
+			goto 8;
+	}
+	
+	state 8
+	{
+		(alpha; alpha):
+			move not, right;
+		(alpha; empty):
+			move not, left;
+			goto 9;
+	}
+	
+	state 9
+	{
+		(alpha; alpha):
+			if first == second:
+				move left, left;
+			else:
+				value = ('-', ...);
+				goto end;
+		(empty; empty):
+			value = ('+',...);
+			goto end;
+	}
+}

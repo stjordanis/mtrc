@@ -1,0 +1,58 @@
+turing select
+{	
+	alpha = { '1', '*' };
+	
+	// Движение вправо до конца
+	begin state 1 {
+		alpha:
+			move right;
+		empty:
+			move left;
+			goto 2;
+	}
+	
+	state 2 {
+		'1':
+			value = empty;
+			move left;
+			goto 3;
+		'*':
+			value = empty;
+			move left;
+			goto 5;
+		empty:
+			move left;
+	}
+	
+	state 3 {
+		alpha:
+			move left;
+		empty:
+			move right;
+			goto 4;
+	}
+	
+	state 4 {
+		'1':
+			value = empty;
+			move right;
+		empty:
+			move left;
+			goto 2;
+		'*':
+			value = empty;
+			move right;
+			goto 1;
+	}
+	
+	state 5 {
+		'1':
+			move left;
+		'*':
+			move right;
+			goto 4;
+		empty:
+			move right;
+			goto end;
+	}
+}

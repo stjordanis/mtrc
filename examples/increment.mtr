@@ -1,0 +1,13 @@
+turing increment
+{
+	alpha = { '1' };
+	
+	begin state 0
+	{
+		'1':
+			move left;
+		empty:
+			value = '1';
+			goto end;
+	}
+}

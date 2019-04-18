@@ -1,0 +1,10 @@
+Release
+Debug
+*.obj
+*.tab.*
+*.flex.*
+*.vcxproj*
+*.gv
+*.sln
+*.output
+*.svg
