@@ -163,7 +163,7 @@ int write_object(mtrc_object& obj, FILE* fout)
 	fwrite(&obj.begin_state, sizeof(int), 1, fout);
 	fwrite(symbols, sizeof(IMAGE_SYMBOL), 1, fout);
 	fwrite(aux_sym_file, sizeof(IMAGE_AUX_SYMBOL), n_symbs, fout);
-	delete aux_sym_file;
+	delete[] aux_sym_file;
 	fwrite(&symbols[1], sizeof(IMAGE_SYMBOL), 2, fout);
 	fwrite(&aux_symbol_text, sizeof(IMAGE_AUX_SYMBOL), 1, fout);
 	fwrite(&symbols[3], sizeof(IMAGE_SYMBOL), 2, fout);
