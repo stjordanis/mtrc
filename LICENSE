@@ -1,6 +1,11 @@
-MIT License
+# Licenses
 
-Copyright (c) 2015-2021 Лев Воробьёв
+This project is licensed under the MIT license, except where otherwise noted.
+The full text of the MIT license is included below.
+
+## MIT License
+
+Copyright (c) 2019-2021 Lev Vorobyov
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,3 +24,23 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+## Exceptions
+
+This program contains borrowings from third-party project: yasm (http://yasm.tortall.net/).
+Thus, some fragments are licensed under BSD-2-clause and BST-3-clause licenses.
+
+### `main.cpp`
+
+This module is modified copy of yasm/frontends/tasm/tasm.c licensed under BSD-2-Clause.
+See yasm/frontends/tasm/tasm.c for details.
+
+### `mtrc-options.h`
+
+This file taken from yasm/frontends/tasm/tasm-options.h licensed under BSD-2-Clause.
+See yasm/frontends/tasm/tasm-options.h for details.
+
+### `mtrc-options.cpp`
+
+This file taken from yasm/frontends/tasm/tasm-options.h licensed under BSD-3-Clause.
+See yasm/frontends/tasm/tasm-options.c for details.

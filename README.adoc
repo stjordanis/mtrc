@@ -7,6 +7,6 @@
 Prerequisites:
 
 - flex, bison installed
-- MCVC++ 2015 or later
+- MSVC++ 2015 or later
 
-To build this compiller you may run nmake or other build tools.
+To build this compiller, run nmake or other build tools.
